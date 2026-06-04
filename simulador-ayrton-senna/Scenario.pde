@@ -15,18 +15,18 @@ class Scenario {
       // lado esquerdo
       trees.add(
         new Tree(
-          random(40, width * 0.22),
-          random(horizonY, height)
+        random(40, width * 0.22),
+        random(horizonY, height)
         )
-      );
+        );
 
       // lado direito
       trees.add(
         new Tree(
-          random(width * 0.78, width - 40),
-          random(horizonY, height)
+        random(width * 0.78, width - 40),
+        random(horizonY, height)
         )
-      );
+        );
     }
   }
 
@@ -58,7 +58,7 @@ class Scenario {
       tree.display();
     }
   }
-
+  //Talvez não vou implementar isso....
   void drawSky() {
 
     noStroke();
@@ -70,7 +70,7 @@ class Scenario {
       0,
       width,
       horizonY
-    );
+      );
   }
 
   void drawGrass() {
@@ -82,6 +82,6 @@ class Scenario {
       0,
       width * 5,
       height * 5
-    );
+      );
   }
 }

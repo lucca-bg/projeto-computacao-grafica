@@ -5,16 +5,16 @@ boolean downPressed;
 
 void keyPressed() {
 
-  if (keyCode == LEFT) leftPressed = true;
-  if (keyCode == RIGHT) rightPressed = true;
-  if (keyCode == UP) upPressed = true;
-  if (keyCode == DOWN) downPressed = true;
+  if (keyCode == LEFT || key == 'a' || key == 'A') leftPressed = true;
+  if (keyCode == RIGHT || key == 'd' || key == 'D') rightPressed = true;
+  if (keyCode == UP || key == 'w' || key == 'W') upPressed = true;
+  if (keyCode == DOWN || key == 's' || key == 'S') downPressed = true;
 }
 
 void keyReleased() {
 
-  if (keyCode == LEFT) leftPressed = false;
-  if (keyCode == RIGHT) rightPressed = false;
-  if (keyCode == UP) upPressed = false;
-  if (keyCode == DOWN) downPressed = false;
+  if (keyCode == LEFT || key == 'a' || key == 'A') leftPressed = false;
+  if (keyCode == RIGHT || key == 'd' || key == 'D') rightPressed = false;
+  if (keyCode == UP || key == 'w' || key == 'W') upPressed = false;
+  if (keyCode == DOWN || key == 's' || key == 'S') downPressed = false;
 }

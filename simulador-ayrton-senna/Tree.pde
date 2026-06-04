@@ -10,7 +10,7 @@ class Tree {
     this.x = x;
     this.y = y;
 
-    size = random(0.8, 1.4);
+    size = random(0.8, 2.6);
   }
 
   void display() {
