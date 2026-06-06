@@ -2,11 +2,66 @@ class HUD {
 
   void display() {
 
-    fill(255);
-    textSize(28);
+    drawPanel();
+    drawTexts();
+    drawLifeBar();
+  }
 
-    text("Velocidade: " + int(player.speed * 20) + " km/h", 20, 40);
-    text("Pontos: " + score, 20, 80);
-    text("Vida: " + int(life), 20, 120);
+  void drawPanel() {
+
+    fill(0, 150);
+    rect(90, 10, 320, 320, 15);
+  }
+
+  void drawTexts() {
+
+    fill(255);
+
+    textAlign(LEFT);
+
+    textSize(24);
+
+    text(
+      "Velocidade: " + int(player.speed * 20) + " km/h",
+      25,
+      45
+    );
+
+    text(
+      "Pontos: " + score,
+      25,
+      80
+    );
+
+    text(
+      "Vida",
+      25,
+      145
+    );
+  }
+
+  void drawLifeBar() {
+
+    // Fundo
+    fill(60);
+
+    rect(
+      100,
+      100,
+      200,
+      25,
+      10
+    );
+
+    // Vida atual
+    fill(0, 255, 0);
+
+    rect(
+      100,
+      100,
+      life * 2,
+      25,
+      10
+    );
   }
 }

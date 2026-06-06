@@ -16,10 +16,10 @@ void checkCollisions() {
       
         enemy.collided = true;
       
-        score -= 1;
-        life -= 5;
+        score -= 3;
+        life -= 10;
       
-        player.speed *= 0.7;
+        player.speed *= 0.66;
       }
     }
   }

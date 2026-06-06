@@ -53,7 +53,7 @@ class PlayerCar {
     
     if (kmh >= 200) {
     
-      life += 0.5;
+      life += (0.25 + (1/difficulty));
     }    
     speed = constrain(speed, 0, 10);
     life = constrain(life, 0, 100);
