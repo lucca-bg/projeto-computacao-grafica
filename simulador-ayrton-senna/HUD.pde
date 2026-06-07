@@ -32,12 +32,6 @@ class HUD {
       25,
       80
     );
-
-    text(
-      "Vida",
-      25,
-      145
-    );
   }
 
   void drawLifeBar() {
@@ -46,8 +40,8 @@ class HUD {
     fill(60);
 
     rect(
-      100,
-      100,
+      120,
+      125,
       200,
       25,
       10
@@ -57,8 +51,8 @@ class HUD {
     fill(0, 255, 0);
 
     rect(
-      100,
-      100,
+      120,
+      125,
       life * 2,
       25,
       10

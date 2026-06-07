@@ -29,11 +29,33 @@ void keyPressed() {
     }
   }
 
-  else if (gameState == GAME_OVER && keyCode == ENTER) {
+  else if (gameState == GAME_OVER) {
+    if (key == '1') {
 
-    restartGame();
-  }  
+      difficulty = 5;
+    }
 
+    if (key == '2') {
+
+      difficulty = 10;
+
+    }
+
+    if (key == '3') {
+
+      difficulty = 15;
+    }
+
+    if (keyCode == ENTER) {
+      restartGame();
+    }
+  }
+  
+  if (gameState == PLAYING && keyCode == ESC) {
+    key = 0;
+    returnToMenu();
+  }
+  
   if (keyCode == LEFT || key == 'a' || key == 'A') leftPressed = true;
   if (keyCode == RIGHT || key == 'd' || key == 'D') rightPressed = true;
   if (keyCode == UP || key == 'w' || key == 'W') upPressed = true;

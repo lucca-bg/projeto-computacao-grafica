@@ -15,6 +15,8 @@ int difficulty = 5;
 
 ArrayList<EnemyCar> enemies;
 
+PFont DCC;
+
 void setup() {
   size(1000, 700);
 
@@ -24,6 +26,7 @@ void setup() {
   hud = new HUD();
 
   enemies = new ArrayList<EnemyCar>();
+  DCC = createFont("DCC.otf", 128);
 
 }
 
@@ -86,7 +89,8 @@ void drawMenu() {
   textAlign(CENTER);
 
   textSize(64);
-  text("TOP GEAR RETRO", width/2, 180);
+  textFont(DCC);
+  text("TOP GEAR", width/2, 180);
 
   textSize(30);
   text("Escolha a dificuldade", width/2, 300);
@@ -136,15 +140,46 @@ void drawGameOver() {
   textAlign(CENTER);
 
   textSize(70);
-  text("GAME OVER", width/2, 250);
+  text("GAME OVER", width/2, 100);
 
   fill(255);
 
   textSize(32);
-  text("Pontuação: " + score, width/2, 350);
+  text(score + " Pontos", width/2, 200);
+  
+  textSize(30);
+  text("Escolha a dificuldade", width/2, 300);
 
   textSize(24);
-  text("Pressione ENTER para reiniciar", width/2, 450);
+
+  text("1 - Fácil", width/2, 380);
+  text("2 - Médio", width/2, 430);
+  text("3 - Difícil", width/2, 480);  
+  
+  fill(255, 255, 0);  
+  
+  String diffName = "";
+
+  switch(difficulty) {
+
+  case 5:
+    diffName = "FÁCIL";
+    break;
+
+  case 10:
+    diffName = "MÉDIO";
+    break;
+
+  case 15:
+    diffName = "DIFÍCIL";
+    break;
+  }  
+  text("Dificuldade atual: " + diffName, width/2, 540);
+ 
+  fill(0, 255, 0);  
+  
+  textSize(24);
+  text("Pressione ENTER para reiniciar", width/2, 650);
 }
 
 void restartGame() {
@@ -169,4 +204,16 @@ void createEnemies() {
 
     enemies.add(new EnemyCar());
   }
+}
+
+void returnToMenu() {
+
+  score = 0;
+  life = 100;
+
+  enemies.clear();
+
+  player = new PlayerCar();
+
+  gameState = MENU;
 }
